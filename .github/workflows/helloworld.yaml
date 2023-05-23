@@ -19,3 +19,6 @@ jobs:
   sayHelloAgain:
     needs: sayHelloandGoodbye
     uses: vramaprasad/reusable-sayhelloagain/.github/workflows/say-helloagain.yaml@main
+    secrets: inherit
+    with:
+      name: ${{ needs.sayHelloandGoodbye.outputs.name }}
