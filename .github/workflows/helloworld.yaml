@@ -1,1 +1,22 @@
-#test file
+name: Call reusable workflow
+on:
+#  push:
+#    branches:
+#      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  sayHelloandGoodbye:
+    uses: vramaprasad/reusable-sayhelloandgoodbye/.github/workflows/hello-goodbye.yaml@v1.0.1
+    secrets: inherit
+    with:
+      name: Engineering Retreat
+
+  sayHelloAgain:
+    needs: sayHelloandGoodbye
+    uses: vramaprasad/reusable-sayhelloagain/.github/workflows/say-helloagain.yaml@v1.0.1
+    
