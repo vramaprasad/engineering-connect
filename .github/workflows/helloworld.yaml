@@ -11,12 +11,11 @@ permissions:
 
 jobs:
   sayHelloandGoodbye:
-    uses: vramaprasad/reusable-sayhelloandgoodbye/.github/workflows/hello-goodbye.yaml@v1.0.1
+    uses: vramaprasad/reusable-sayhelloandgoodbye/.github/workflows/hello-goodbye.yaml@main
     secrets: inherit
     with:
       name: Engineering Retreat
 
   sayHelloAgain:
     needs: sayHelloandGoodbye
-    uses: vramaprasad/reusable-sayhelloagain/.github/workflows/say-helloagain.yaml@v1.0.1
-    
+    uses: vramaprasad/reusable-sayhelloagain/.github/workflows/say-helloagain.yaml@main
